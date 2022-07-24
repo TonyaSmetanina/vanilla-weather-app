@@ -49,6 +49,7 @@ function displayTemperature (response) {
    
     iconElemet.setAttribute ("alt", response.data.weather[0].description);
 
+    celciumTemp = response.data.main.temp; 
 
 }
 
@@ -66,8 +67,37 @@ function handleSubmit (event) {
     search (cityInputElement.value);
 }
 
+function displayFarenhTemp (event) {
+    event.preventDefault ();
+    let temperatureElement = document.querySelector ("#temperature");
 
-search ("New York");
+    celciumLink.classList.remove("active");
+    farenhLink.classList.add ("active");
+
+    let farenhTemp = (celciumTemp * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round (farenhTemp);
+}
+
+function displayCelciumTemp (event) {
+    event.preventDefault ();
+
+    celciumLink.classList.add ("active");
+    farenhLink.classList.remove ("active");
+
+    let temperatureElement = document.querySelector ("#temperature");
+    temperatureElement.innerHTML = Math.round (celciumTemp);
+}
+
+let celciumTemp = null;
+
 
 let form = document.querySelector ("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let farenhLink = document.querySelector ("#farenh-link");
+farenhLink.addEventListener ("click", displayFarenhTemp);
+
+let celciumLink = document.querySelector ("#celcium-link");
+celciumLink.addEventListener ("click", displayCelciumTemp);
+
+search ("Kyiv");

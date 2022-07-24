@@ -70,3 +70,23 @@ small {
     margin-top: 40px;
 
 }
+
+.weather-temperature .active {
+    color: rgb(33, 33, 33);
+    cursor: default;
+    text-decoration: none;
+
+}
+
+.weather-temperature .active:hover {
+    text-decoration: none;
+}
+
+
+.weather-temperature .farenh {
+    text-decoration: none;
+}
+
+.weather-temperature .farenh:hover {
+    text-decoration: none;
+}
