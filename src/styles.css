@@ -3,14 +3,19 @@ body {
 
 }
 
+.col-2 {
+    width: 13.666667%;
+}
 
 .weather-app {
-    max-width: 600px;
+    max-width: 800px;
     margin: 30px auto;
     padding: 20px;
     border: 1px solid #dadde1;
     border-radius: 5px;
 }
+
+
 
 h1 {
     color: #878787;
@@ -64,10 +69,12 @@ li:first-letter {
     top: -34px;
 }
 
-small {
+footer {
     color: rgba(39,33,66,.4);
     font-size: 14px;
-    margin-top: 40px;
+    margin-top: 41px;
+    line-height: 18px;
+    text-align: center;
 
 }
 
