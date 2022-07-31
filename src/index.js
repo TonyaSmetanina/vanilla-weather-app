@@ -1,3 +1,4 @@
+
 function formatDate (timestamp) {
     //calculate the date
 
@@ -45,21 +46,22 @@ function displayForecast (response) {
 
     let forecastHTML = `<div class = "row">`;
     forecast.forEach(function(forecastDay, index) {
-        if (index < 7){
+        if (index < 6){
 
 
         forecastHTML = forecastHTML + `
-        <div class="col-2">
+        <div class="col card weather-forecast-cards">
             <div class="weather-forecast-date">
                 ${formatDay(forecastDay.dt)}
             </div>
 
             <img src="https://openweathermap.org/img/wn/${forecast[0].weather[0].icon}@2x.png" 
             alt=""
-            width="36"
             /> 
+            <div class = "weather-forecast-temperature-text">
+            min<span>  max</span></div>
             <div class="weather-forecast-temperature">
-               <span class="weather-forecast-temperature-max">
+               <span class="weather-forecast-temperature-max"> 
                 ${Math.round (
                     forecastDay.temp.max
                     )}° </span> 
@@ -80,7 +82,6 @@ function displayForecast (response) {
 }
 
 function getForecast (coordinates) {
-    console.log (coordinates);
     let apiKey = "2385e38ab7a755a47b225394ab5f5fc0";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
@@ -125,6 +126,25 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
 axios.get(apiUrl).then(displayTemperature);
 
 }
+
+
+function searchLocation (position) {
+    let apiKey = "2385e38ab7a755a47b225394ab5f5fc0";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  
+    axios.get(apiUrl).then(displayTemperature);
+  
+  }
+  
+  function getCurrentLocation (event) {
+    event.preventDefault ();
+    navigator.geolocation.getCurrentPosition (searchLocation);
+  
+  }
+
+let currentLocation = document.querySelector (".location");
+currentLocation.addEventListener ("click", getCurrentLocation);
+
 
 function handleSubmit (event) {
     event.preventDefault();

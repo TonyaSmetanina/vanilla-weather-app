@@ -9,67 +9,66 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
    
     <title>Vanilla weather app</title>
+    <link rel="shortcut icon" type="image/png" href="img\logo3.png"/>
 
 </head>
 <body>
     <div class="container">
     <div class="weather-app">
-        <form id="search-form" class="mb-3">
+        <div>
+        <img class="weather-logo" src = "img\logo3.png" alt="logo"/>
+        </div>
+        <form id="search-form" class="mb-3 search">
             <div class="row">
             <div class="col-9">
-                <input 
+                <input required
                     type="search" 
-                    placeholder="Type a city" 
+                    placeholder="Enter a city" 
                     class="form-control"
                     id = "city-input"
                     autocomplete="off"
                     />
             </div>
             <div class="col-3">
-                <input type="submit" value = "Search" class="btn btn-primary w-100"/>
+                <input 
+                    type="submit" 
+                    value = "Search" 
+                    class="btn btn-secondary w-100"
+                    />
             </div>
+            </div>
+            <div>
+            <a class="location" href="#"> Current location </a>
             </div>
         </form>
-        <div class="overview">
+    <div class="weather-info">
+    <div class="row">
+        <div class="col-6">
             <h1 id = "city">
-                
             </h1>
             <ul>
-                <li> Last updated: <span id ="date"></span>
+                <li>
+                    <span id ="date"></span>, <span id = "description"> </span>
                 </li>
-                <li id = "description">
+                <li>
+                    <span>Humidity: <span id = "humidity"></span>%,</span> 
+                    <span>  Wind: <span id="wind"> </span> km/h </span>
                 </li>
-
             </ul>
         </div>
-        <div class="row">
-            <div class="col-7">
-                <div class="clearfix weather-temperature">
+        <div class="col-6">
+            <div class="weather-temperature">
                 <img src="img/Sun_Outline.png" 
                 alt="cloudy"
-                id = "icon"
-                class="float-left"
                 id = "icon" /> 
-                <div class="float-left">
-                    <strong id = "temperature"></strong>
+                <strong id = "temperature"></strong>
                 <span class="units">
                     <a href="#" id = "celcium-link" class="active">
                     °C </a>| <a href="#" id = "farenh-link" class="farenh">°F</a> 
                 </span>
-                    </div>
             </div>
-        </div>
-            <div class="col-7">
-                <ul>
-                    <li>
-                        Humidity: <span id = "humidity"></span>% 
-                    </li>
-                    <li>
-                        Wind: <span id="wind"> </span>km/h
-                    </li>
-                </ul>
-              
-            </div>
+    </div>
+    </div>
         <div class="weather-forecast" id = "forecast">
        
         </div>
