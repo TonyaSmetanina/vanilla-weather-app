@@ -117,6 +117,18 @@ li:first-letter {
     font-size:  16px;
     top: -34px;
 }
+.weather-forecast-cards {
+    margin: 0 5px 0 5px;
+}
+
+.weather-forecast-cards:first-child {
+    margin: 0 5px 0 13px;
+}
+
+.weather-forecast-cards:last-child {
+    margin: 0 8px 0 5px;
+}
+
 
 .weather-forecast-cards:hover {
     border-color: #f86a47;
@@ -161,6 +173,9 @@ footer {
 .weather-forecast-date {
     font-size: 16px;
     opacity: 0.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .weather-forecast-temperature {
