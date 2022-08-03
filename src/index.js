@@ -61,14 +61,16 @@ function displayForecast (response) {
             <div class = "weather-forecast-temperature-text">
             min<span>  max</span></div>
             <div class="weather-forecast-temperature">
-               <span class="weather-forecast-temperature-max"> 
-                ${Math.round (
-                    forecastDay.temp.max
-                    )}° </span> 
+               
                 <span class="weather-forecast-temperature-min">
                 ${Math.round (
                     forecastDay.temp.min
                     )}° </span>
+
+                    <span class="weather-forecast-temperature-max"> 
+                    ${Math.round (
+                        forecastDay.temp.max
+                        )}° </span> 
             </div>
         </div>`
         ;}
@@ -179,10 +181,10 @@ let celciumTemp = null;
 let form = document.querySelector ("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let farenhLink = document.querySelector ("#farenh-link");
-farenhLink.addEventListener ("click", displayFarenhTemp);
+// let farenhLink = document.querySelector ("#farenh-link");
+// farenhLink.addEventListener ("click", displayFarenhTemp);
 
-let celciumLink = document.querySelector ("#celcium-link");
-celciumLink.addEventListener ("click", displayCelciumTemp);
+// let celciumLink = document.querySelector ("#celcium-link");
+// celciumLink.addEventListener ("click", displayCelciumTemp);
 
 search ("Kyiv");

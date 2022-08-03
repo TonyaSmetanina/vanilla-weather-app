@@ -6,9 +6,16 @@ body {
 
 .weather-logo {
         max-width: 100px;
-        display: block;
+        /* display: block; */
         margin: 0 0 20px 0;
 
+}
+
+.logo-text {
+    font-family: Space Grotesk, Arial,sans-serif;
+    font-size: 64px;
+    margin: -100px 0px 0px 79px;
+    color: #68767e;
 }
 
 .location {
@@ -43,6 +50,11 @@ body {
     margin-top: 30px;
 }
 
+#city-input:focus {
+    border-color: #6c757d;
+    box-shadow:none;
+
+}
 
 a {
     text-decoration:none;

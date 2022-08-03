@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="src/styles.css" rel= "stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
    
     <title>Vanilla weather app</title>
@@ -15,9 +16,11 @@
 <body>
     <div class="container">
     <div class="weather-app">
-        <div>
-        <img class="weather-logo" src = "img\logo3.png" alt="logo"/>
+        <div class = "row">
+        <img class="col weather-logo" src = "img\logo3.png" alt="logo"/>
         </div>
+        <div class="col logo-text"> Weather
+            </div>
         <form id="search-form" class="mb-3 search">
             <div class="row">
             <div class="col-9">
@@ -62,9 +65,9 @@
                 alt="cloudy"
                 id = "icon" /> 
                 <strong id = "temperature"></strong>
-                <span class="units">
-                    <a href="#" id = "celcium-link" class="active">
-                    °C </a>| <a href="#" id = "farenh-link" class="farenh">°F</a> 
+                <span class="units" id = "celcium-link">
+                    °C
+                    <!-- <a href="#" id = "farenh-link" class="farenh">°F</a>  -->
                 </span>
             </div>
     </div>
